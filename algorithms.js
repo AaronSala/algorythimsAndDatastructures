@@ -39,7 +39,7 @@ function factorial(n) {
     }
     return result;
 }
-console.log(factorial(5));
+console.log(factorial(5)); //120
 
 //prime numbers :big O  = O(n)
 function primeNumbers(n) {
@@ -53,6 +53,63 @@ function primeNumbers(n) {
     }
     return true
 }
-console.log(primeNumbers(8));
-console.log(primeNumbers(17));
-console.log(primeNumbers(24));
+console.log(primeNumbers(8));//false
+console.log(primeNumbers(17));//false
+console.log(primeNumbers(24));//true
+
+
+//the power of 2 big: logarythimic (O(logn))
+function powerOf2(n) {
+    if (n<1) {
+        return false 
+    }
+    while (n > 1) {
+        if (n % 2 !== 0) {
+            return false
+        }
+        n/=2
+    }
+    return true
+}
+console.log(powerOf2(4)); //true
+console.log(powerOf2(8));//true
+console.log(powerOf2(12));//false
+
+//RECURSON
+//recursion in fibonacci  big O(2^n) "very terible"
+function recursiveFibonacci(n) {
+    if (n < 2) { return n }
+    return recursiveFibonacci(n-1)+recursiveFibonacci(n-2)
+}
+console.log(recursiveFibonacci(7)); //13
+
+//recursion in factorial big O =O(n)
+
+function recursionFactorial(n) {
+    if (n == 0) {
+        return 1
+    }
+    return n* recursionFactorial(n-1)
+}
+console.log(recursionFactorial(5));
+
+//linear search Big O =O(n)
+
+function search(arr, target) {
+    
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] === target) {
+            return i
+        }
+    }
+    return -1
+}
+console.log(search([2, 3, 4, 5, 6, 7], 5));
+
+//binary search
+let arr = [2, 4, 6, 7, 9, 12, 15]
+function binarySearch(target) {
+    while (target>1) {
+        
+    }
+}
